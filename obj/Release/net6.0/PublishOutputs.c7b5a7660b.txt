@@ -1,0 +1,5 @@
+C:\Temp\aaaaaaNOAA\udpTest\udpSender\bin\Release\net6.0\publish\udpSender.exe
+C:\Temp\aaaaaaNOAA\udpTest\udpSender\bin\Release\net6.0\publish\udpSender.dll
+C:\Temp\aaaaaaNOAA\udpTest\udpSender\bin\Release\net6.0\publish\udpSender.deps.json
+C:\Temp\aaaaaaNOAA\udpTest\udpSender\bin\Release\net6.0\publish\udpSender.runtimeconfig.json
+C:\Temp\aaaaaaNOAA\udpTest\udpSender\bin\Release\net6.0\publish\udpSender.pdb

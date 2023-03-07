@@ -1,0 +1,5 @@
+/home/sysop/Desktop/jmcStuff/VSCode/udpTest/udpSender/bin/ReleaseSend/net6.0/publish/udpSender
+/home/sysop/Desktop/jmcStuff/VSCode/udpTest/udpSender/bin/ReleaseSend/net6.0/publish/udpSender.dll
+/home/sysop/Desktop/jmcStuff/VSCode/udpTest/udpSender/bin/ReleaseSend/net6.0/publish/udpSender.deps.json
+/home/sysop/Desktop/jmcStuff/VSCode/udpTest/udpSender/bin/ReleaseSend/net6.0/publish/udpSender.runtimeconfig.json
+/home/sysop/Desktop/jmcStuff/VSCode/udpTest/udpSender/bin/ReleaseSend/net6.0/publish/udpSender.pdb
