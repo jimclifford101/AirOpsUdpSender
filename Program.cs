@@ -3,7 +3,6 @@
 // dotnet publish -c Release
 // dotnet new console -o "ConsoleApplciation2"
 
-
 using System;
 using System.Net;
 using System.Net.Sockets;
@@ -27,22 +26,44 @@ namespace udpsender
 
         private static void fUdpsender() {
 
-            var src = DateTime.Now;
+            string[] sIWGMsgArray = new string[12];
 
-            string sMyTimeStamp = "Time:" + src.Hour.ToString() + "_" + src.Minute.ToString() + "_" + src.Second.ToString();
 
-            string sIWGMessage = "IWG1," + sMyTimeStamp + ",21.1653,-168.5142,,,,,,,,";
-
-            byte[] StringAsBytes = Encoding.ASCII.GetBytes(sIWGMessage);
+            sIWGMsgArray[0] = "IWG1,2023-03-14T23:17:55.939Z,39.990847,-105.224955,1618.056030,,,0.000000,,,,,,270.000008,,,,,,,,,,,,,,,,,,,";
+            sIWGMsgArray[1] = "IWG1,2023-03-14T23:17:56.670Z,39.990847,-106.224955,1618.050781,,,0.000000,,,,,,270.000008,,,,,,,,,,,,,,,,,,,";
+            sIWGMsgArray[2] = "IWG1,2023-03-14T23:17:58.241Z,39.990847,-107.224955,1618.050781,,,0.000000,,,,,,270.000008,,,,,,,,,,,,,,,,,,,";
+            sIWGMsgArray[3] = "IWG1,2023-03-14T23:17:58.969Z,39.990847,-108.224955,1618.050781,,,0.000000,,,,,,270.000008,,,,,,,,,,,,,,,,,,,";
+            sIWGMsgArray[4] = "IWG1,2023-03-14T23:17:59.690Z,39.990847,-109.224955,1618.048096,,,0.000000,,,,,,270.000008,,,,,,,,,,,,,,,,,,,";
+            sIWGMsgArray[5] = "IWG1,2023-03-14T23:18:01.247Z,39.990847,-110.224955,1618.050781,,,0.000000,,,,,,270.000008,,,,,,,,,,,,,,,,,,,";
+            sIWGMsgArray[6] = "IWG1,2023-03-14T23:18:01.982Z,39.990847,-111.224955,1618.050781,,,0.000000,,,,,,270.000008,,,,,,,,,,,,,,,,,,,";
+            sIWGMsgArray[7] = "IWG1,2023-03-14T23:18:02.823Z,39.990847,-112.224955,1618.050781,,,0.000000,,,,,,270.000008,,,,,,,,,,,,,,,,,,,";
+            sIWGMsgArray[8] = "IWG1,2023-03-14T23:18:04.280Z,39.990847,-113.224955,1618.050781,,,0.000000,,,,,,270.000008,,,,,,,,,,,,,,,,,,,";
+            sIWGMsgArray[9] = "IWG1,2023-03-14T23:18:05.103Z,39.990847,-114.224955,1618.050781,,,0.000000,,,,,,270.000008,,,,,,,,,,,,,,,,,,,";
+            sIWGMsgArray[10] = "IWG1,2023-03-14T23:18:05.832Z,39.990847,-115.224955,1618.048096,,,0.000000,,,,,,270.000008,,,,,,,,,,,,,,,,,,,";
+            sIWGMsgArray[11] = "IWG1,2023-03-14T23:18:07.282Z,39.990847,-116.224955,1618.050781,,,0.000000,,,,,,270.000008,,,,,,,,,,,,,,,,,,,";
 
             try
             {
                 using (var client = new UdpClient())
                 {
 
-                    client.Send(StringAsBytes, StringAsBytes.Length, "127.0.0.1", 10645);
+                    
+                    for (int i = 0; i < 12; i++) 
+                    {
+                        byte[] StringAsBytes = Encoding.ASCII.GetBytes(sIWGMsgArray[i]);
+                    
+                        client.Send(StringAsBytes, StringAsBytes.Length, "127.0.0.1", 10645);
+                        //client.Send(StringAsBytes, StringAsBytes.Length, "10.10.16.31", 10645);
 
-                    Console.WriteLine("IWG MSG Sent! (Run again to send another msg)");
+                        Console.WriteLine("IWG MSG Sent! i: " + i.ToString());
+                        Console.WriteLine(""); 
+
+                        Thread.Sleep(8000); //wait 8 seconds
+
+                    }
+                    
+
+                    Console.WriteLine("IWG udpSender Done!!!");
                     Console.WriteLine(""); 
                 }
             }
@@ -60,6 +81,12 @@ namespace udpsender
     }
 
 }
+
+
+
+
+
+
 
 
 
